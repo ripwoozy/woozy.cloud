@@ -1,0 +1,19 @@
+/**
+ * scrollbar.css — Custom scrollbar styling for terminal output
+ * Author: Woozy
+ */
+
+#terminal-output::-webkit-scrollbar {
+  width: 8px;
+  background-color: #1a1a1a; /* Dark background to match terminal */
+}
+
+#terminal-output::-webkit-scrollbar-thumb {
+  background-color: #004d4d; /* Primary thumb color */
+  border-radius: 4px;
+  border: 1px solid #cba6f7; /* Accent border matching theme */
+}
+
+#terminal-output::-webkit-scrollbar-thumb:hover {
+  background-color: #006666; /* Slightly brighter on hover */
+}

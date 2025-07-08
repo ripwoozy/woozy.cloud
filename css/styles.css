@@ -1,0 +1,178 @@
+/**
+ * styles.css — Main stylesheet for terminal portfolio
+ * Author: Woozy
+ */
+
+/* ------------------------------------------------------------------------- */
+/* Base Body Setup                                                           */
+/* ------------------------------------------------------------------------- */
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Fade In Transitions                                                       */
+/* ------------------------------------------------------------------------- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Terminal Container                                                        */
+/* ------------------------------------------------------------------------- */
+
+.terminal {
+  background-color: #000;
+  border: 1px solid #cba6f7;
+  box-shadow: 0 0 20px rgba(203, 166, 247, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.terminal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(203, 166, 247, 0.1);
+  pointer-events: none;
+}
+
+.terminal-focused {
+  box-shadow: 0 0 25px rgb(203, 166, 247);
+}
+
+/* ------------------------------------------------------------------------- */
+/* Cursor and Input Line                                                    */
+/* ------------------------------------------------------------------------- */
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: #cdd6f4;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ------------------------------------------------------------------------- */
+/* Terminal Header Buttons                                                   */
+/* ------------------------------------------------------------------------- */
+
+.terminal-header {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.terminal-button:hover {
+  opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Terminal Output Scrollbar & Pre Styles                                    */
+/* ------------------------------------------------------------------------- */
+
+#terminal-output {
+  white-space: pre;
+  font-family: 'JetBrains Mono', monospace;
+  padding-right: 1.5rem;
+  margin-right: 4px;
+}
+
+#terminal-output::-webkit-scrollbar {
+  width: 4px;
+  background-color: #1a1a1a;
+}
+
+#terminal-output::-webkit-scrollbar-thumb {
+  background-color: #004d4d;
+  border-radius: 4px;
+  border: 1px solid #cba6f7;
+}
+
+#terminal-output::-webkit-scrollbar-thumb:hover {
+  background-color: #006666;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Utilities                                                                 */
+/* ------------------------------------------------------------------------- */
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+.skill-bar {
+  display: inline-block;
+  overflow: hidden;
+  animation: load 1.5s ease-out forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to   { width: var(--target-width); }
+}
+
+.new-tab-warning {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+/* ------------------------------------------------------------------------- */
+/* Boot Screen                                                               */
+/* ------------------------------------------------------------------------- */
+
+#boot-screen {
+  transition: opacity 0.8s ease;
+  background-color: #11111b;
+  max-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#boot-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#boot-log {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

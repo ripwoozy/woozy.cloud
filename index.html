@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>woozy.cloud</title>
+    <link rel="icon" type="image/x-icon" href="assets/cloud.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/scrollbar.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="bg-[#11111b] text-[#cba6f7] font-mono">
+  <div
+    id="boot-screen"
+    class="fixed inset-0 z-50 bg-black text-[#cdd6f4] text-sm px-4 py-6 overflow-y-auto max-h-[100dvh] sm:px-6 sm:py-8"
+  >
+    <pre
+      id="boot-log"
+      class="leading-tight whitespace-pre-wrap break-words font-mono text-sm sm:text-base"
+    ></pre>
+
+    <div id="boot-progress" class="mt-4 h-1 w-full bg-[#1e1e2e] rounded overflow-hidden">
+      <div
+        id="boot-bar"
+        class="h-full w-0 bg-[#cba6f7] transition-all duration-300 ease-linear"
+      ></div>
+    </div>
+  </div>
+
+
+    <div class="flex flex-col items-center justify-center min-h-screen px-4 py-12 ">
+      <!-- Profile Section -->
+      <div class="text-center mb-10">
+        <img
+          src="https://avatars.githubusercontent.com/u/63121659?s=400&u=e7d85130f088b9c7c83cc91958e7ea7e6882a0db&v=4"
+          class="rounded-full mx-auto mb-4 border-2 border-[#cdd6f4]"
+          alt="pfp"
+        />
+        <h1 class="text-5xl text-[#cba6f7] font-bold">Woozy</h1>
+        <p class="text-[#a6e3a1] text-lg">'aka RipWoozy aka 3daWoozy'</p>
+        <p class="mt-2 text-sm text-[#b4befe]">
+          Cybersecurity Student · Security Researcher · Coder · Linux Enthusiast
+        </p>
+      </div>
+
+      <!-- Terminal Card -->
+      <div
+        class="terminal w-full max-w-4xl bg-[#181825] rounded-lg p-4 relative mx-2 sm:mx-4 md:mx-auto text-xs sm:text-sm md:text-base">
+        <div class="terminal-header"></div>
+        <div id="terminal-output" class="h-[40vh] sm:h-96 overflow-y-auto whitespace-pre-wrap break-words font-mono p-2 rounded mb-2 pt-6 leading-tight sm:leading-normal"><div class="mb-1">
+<span class="text-[#cdd6f4]">       .--.</span>        ripwoozy@archlinux  
+<span class="text-[#cdd6f4]">      |o_o |</span>       -------------------  
+<span class="text-[#cdd6f4]">      |:_/ |</span>       <span class="text-[#b4befe]">OS:</span> Arch Linux x86_64  
+<span class="text-[#cdd6f4]">     //   \ \</span>      <span class="text-[#b4befe]">Host:</span> Thinkpad T480  
+<span class="text-[#cdd6f4]">    (|     | )</span>     <span class="text-[#b4befe]">Kernel:</span> 6.7.9-arch1-1  
+<span class="text-[#cdd6f4]">   /'\_   _/`\</span>     <span class="text-[#b4befe]">Shell:</span> zsh  
+<span class="text-[#cdd6f4]">   \___)=(___/</span>     <span class="text-[#b4befe]">Resolution:</span> 1920x1080  
+                   <span class="text-[#b4befe]">Font:</span> JetBrains Mono  
+                   <span class="text-[#b4befe]">Theme:</span> Catppuccin Mocha
+          </div><span class="text-[#b4befe]">Type</span> <span class="text-[#fab387]">help</span> <span class="text-[#b4befe]">for a list of commands</span>
+        </div>
+        <input id="terminal-input" class="absolute opacity-0" type="text" autofocus />
+      </div>
+
+      <!-- Footer Section -->
+      <footer class="mt-16 text-center text-gray-600 ">
+        <div class="space-x-4">
+          <a href="https://github.com/ripwoozy" target="_blank">
+            <i class="fab fa-github text-white text-xl hover:text-grey-400 transition-colors"></i>
+          </a>
+          <a href="https://discord.gg/ripwoozy" target="_blank">
+            <i class="fab fa-discord text-white text-xl hover:text-[#5865F2] transition-colors"></i>
+          </a>
+          <a href="https://youtube.com/@ripwoozy" target="_blank">
+            <i class="fab fa-youtube text-white text-xl hover:text-[#f38ba8] transition-colors"></i>
+          </a>
+          <a href="https://reddit.com/u/3daWoozy" target="_blank">
+            <i class="fab fa-reddit text-white text-xl hover:text-[#fab387] transition-colors"></i>
+          </a>
+        </div>
+        <br>
+        <p class="text-sm text-gray-500">
+          Made with <span class="text-[#cba6f7]" role="img" aria-label="love">❤</span> by <span class="font-semibold text-[#cba6f7]">Woozy</span>
+        </p>
+      </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/boot.js"></script>
+  </body>
+</html>
